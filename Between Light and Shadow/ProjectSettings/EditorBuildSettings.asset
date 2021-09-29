@@ -11,4 +11,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstArea.unity
     guid: 33bc5b5669445b74a825687068a7e8d4
+  - enabled: 1
+    path: Assets/Scenes/LeftRoad.unity
+    guid: 5ed9a87a41ee75b499da6e9936709f3d
+  - enabled: 1
+    path: Assets/Scenes/RightRoad.unity
+    guid: 63b4c253707423542b2b0e77e8f3c36e
+  - enabled: 1
+    path: Assets/Scenes/Cellar.unity
+    guid: c13f1f23b711c424fac673bec8a57f01
+  - enabled: 1
+    path: Assets/Scenes/CenterHouse.unity
+    guid: 818eab2cbddb3f540a291a8b275691cc
+  - enabled: 1
+    path: Assets/Scenes/LeftHouse.unity
+    guid: 56fa0d6803fb42c46adecab926560e74
+  - enabled: 1
+    path: Assets/Scenes/RightHouse.unity
+    guid: 6a37c26d248eb534e90d6886e58484c7
+  - enabled: 1
+    path: Assets/Scenes/RightShed.unity
+    guid: a726cd9b0cdf4e148a47206736ccaf7d
   m_configObjects: {}
