@@ -25,6 +25,9 @@ public class Inventory : MonoBehaviour
         }
         Instance = this;
         //inventory = gameObject.AddComponent<Inventory>();
+        //add crowbar and pocket knife ot start
+        Instance.addItem("crowbar");
+        Instance.addItem("pocket knife");
     }
 
     //functions to work with the inventory
