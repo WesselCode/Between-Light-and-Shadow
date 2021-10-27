@@ -6,7 +6,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     //to be able to acces this data anywhere, made a global instance to refer to
-    static Inventory inventory;
+    public static Inventory Instance;
 
     //a list of Items is what an inventory is, will add and take away from this as needed
     public List<Item> allItems = new List<Item>();
@@ -19,7 +19,12 @@ public class Inventory : MonoBehaviour
     //to allow each scene to have an inventory, and it will be the same inventory
     void Start()
     {
-        inventory = gameObject.AddComponent<Inventory>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        Instance = this;
+        //inventory = gameObject.AddComponent<Inventory>();
     }
 
     //functions to work with the inventory
