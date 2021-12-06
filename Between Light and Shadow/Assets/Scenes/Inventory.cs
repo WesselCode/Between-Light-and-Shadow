@@ -26,13 +26,13 @@ public class Inventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     //at start, load data from the GlobalControl instance
     public void Start()
     {
         allItems = GlobalControl.Instance.items;
     }
-
+    
     //save inventory to GlobalControl instance, call on scene change
     public void saveInventory()
     {

@@ -13,32 +13,32 @@ public class addItems : MonoBehaviour
     public void getWaterBottle()
     {
         Inventory.Instance.addItem("full water");
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
         GameObject.Find("Water").GetComponent<UnityEngine.UI.Button>().interactable = false;
     }
     //for empty bottle
     public void getEmptyBottle()
     {
         Inventory.Instance.addItem("empty bottle");
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
         GameObject.Find("EmptyBottle").GetComponent<UnityEngine.UI.Button>().interactable = false;
     }
     //for cans
     public void getCan()
     {
         Inventory.Instance.addItem("food can");
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
         GameObject.Find("Can").GetComponent<UnityEngine.UI.Button>().interactable = false;
     }
     //in case of second can
     public void getCan2()
     {
         Inventory.Instance.addItem("food can");
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
         GameObject.Find("Can2").GetComponent<UnityEngine.UI.Button>().interactable = false;
     }
     //for table cloth, disable
@@ -46,48 +46,48 @@ public class addItems : MonoBehaviour
     {
         Inventory.Instance.addItem("cloth");
         GameObject.Find("TableCloth").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
     }
     //for coat rack, disable
     public void getCoat()
     {
         Inventory.Instance.addItem("cloth");
         GameObject.Find("CoatRack").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
     }
     //for clothes line, disable
     public void getSheet()
     {
         Inventory.Instance.addItem("cloth");
         GameObject.Find("ClothingLine").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Debug.Log("item added");
-        Inventory.Instance.printInventory();
+        //Debug.Log("item added");
+        //Inventory.Instance.printInventory();
     }
     //for the map
     public void getMap()
     {
         Inventory.Instance.addItem("Map");
-        Debug.Log("item added");
+        //Debug.Log("item added");
         GameObject.Find("Map").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Inventory.Instance.printInventory();
+        //Inventory.Instance.printInventory();
     }
     //for misc product
     public void getMisc()
     {
         Inventory.Instance.addItem("misc");
-        Debug.Log("item added");
+        //Debug.Log("item added");
         GameObject.Find("Product").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Inventory.Instance.printInventory();
+        //Inventory.Instance.printInventory();
     }
 
     //for bolt cutters
     public void getCutters()
     {
         Inventory.Instance.addItem("bolt cutters");
-        Debug.Log("item added");
+        //Debug.Log("item added");
         GameObject.Find("BoltCutters").GetComponent<UnityEngine.UI.Button>().interactable = false;
-        Inventory.Instance.printInventory();
+        //Inventory.Instance.printInventory();
     }
 }

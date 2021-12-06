@@ -37,12 +37,39 @@ public class AccessInventory : MonoBehaviour
     void DropdownItemSelected(Dropdown dropdown)
     {
         int index = dropdown.value;
-        Debug.Log(index);
+        //Debug.Log(index);
         string selected = dropdown.options[index].text;
-        Debug.Log(selected);
+        //Debug.Log(selected);
         string itemChosen = selected.Remove(selected.Length-11);
-        Debug.Log(itemChosen);
+        //Debug.Log(itemChosen);
         Inventory.Instance.setUse(itemChosen);
+        //edit the textbox over the dropdown saying what is equiped:
+        GameObject.Find("Equiped").GetComponent<UnityEngine.UI.Text>().text = "Equiped: " + itemChosen;
+    }
+
+    public void UpdateInventory()
+    {
+        var dropdown = GameObject.Find("Selection").GetComponent<UnityEngine.UI.Dropdown>();
+        //clear current options:
+        dropdown.options.Clear();
+
+        //make a string of options from the inventory:
+        string[] items = new string[Inventory.Instance.getCount()];
+        Debug.Log(Inventory.Instance.getCount());
+        for (int i = 0; i < Inventory.Instance.getCount(); i++)
+        {
+            items[i] = Inventory.Instance.printItem(i);
+        }
+        //make a dropdown menu with those values:
+        //first make it accessable:
+        foreach (var item in items)
+        {
+            dropdown.options.Add(new Dropdown.OptionData() { text = item });
+        }
+
+        DropdownItemSelected(dropdown);
+
+        dropdown.onValueChanged.AddListener(delegate { DropdownItemSelected(dropdown); });
     }
 
 }
