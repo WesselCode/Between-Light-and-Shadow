@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
 
     //a list of Items is what an inventory is, will add and take away from this as needed
     //add crowbar and pocket knife ot start
-    public List<Item> allItems;
+    public List<Item> allItems = new List<Item>() { new Item("crowbar"), new Item("pocket knife") };
 
     //to be able to have other scenes access it, and it not be deleted throughout scene changes
     //have singleton status
@@ -73,7 +73,11 @@ public class Inventory : MonoBehaviour
     //get the number of unique items in the inventory
     public int getCount()
     {
-        return allItems.Count;
+        if (allItems != null)
+        {
+            return allItems.Count;
+        }
+        return 0;
     }
     //for debug purposes to check if it is saving
     public void printInventory()
@@ -82,5 +86,22 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log(allItems[i].getName() + " | count: " + allItems[i].getAmount());
         }
+    }
+
+    //print inventory item at specific index:
+    public string printItem(int index)
+    {
+        return allItems[index].getName() + " | count: " + allItems[index].getAmount();
+    }
+
+    //to manage which item is being used, items are single use
+    public Item use;
+
+    public void setUse(string name)
+    {
+        //set which item is currently in use
+        use = allItems[findItem(name)];
+        //NOTE: this is called in dropdown of all inventory items, no need to 
+        //check if it is in the list
     }
 }
