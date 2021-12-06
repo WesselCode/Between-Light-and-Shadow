@@ -8,6 +8,7 @@ public class Item
     public Item(string _name)
     {
         name = _name;
+        amount = 1;
     }
 
     //getter and setter functions for private variables

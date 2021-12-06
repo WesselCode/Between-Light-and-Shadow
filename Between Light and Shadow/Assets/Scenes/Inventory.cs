@@ -5,45 +5,40 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
-    }
     //to be able to acces this data anywhere, made a global instance to refer to
     public static Inventory Instance;
 
     //a list of Items is what an inventory is, will add and take away from this as needed
     //add crowbar and pocket knife ot start
-    public List<Item> allItems = new List<Item>() { new Item("crowbar"), new Item("pocket knife") };
+    public List<Item> allItems;
 
     //to be able to have other scenes access it, and it not be deleted throughout scene changes
+    //have singleton status
     void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        /*if (Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(this.gameObject);
-        }*/
-        Instance = this;
-        //inventory = gameObject.AddComponent<Inventory>();
-        //add crowbar and pocket knife ot start
-        //Inventory.Instance.Add(new Item("crowbar"));
-        //Inventory.Instance.Add(new Item("pocket knife"));
-    }
-    //to allow each scene to have an inventory, and it will be the same inventory
-    // void Start()
-    /*{
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this.gameObject);
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
-        Instance = this;
-        //inventory = gameObject.AddComponent<Inventory>();
-        //add crowbar and pocket knife ot start
-        Instance.addItem("crowbar");
-        Instance.addItem("pocket knife");
-    }*/
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    //at start, load data from the GlobalControl instance
+    public void Start()
+    {
+        allItems = GlobalControl.Instance.items;
+    }
+
+    //save inventory to GlobalControl instance, call on scene change
+    public void saveInventory()
+    {
+        GlobalControl.Instance.items = allItems;
+    }
+
     //functions to work with the inventory
     //first check if an item is in the inventory by name, get the index if it is, return -1 otherwise
     public int findItem(string name)
@@ -85,7 +80,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < allItems.Count; i++)
         {
-            Debug.Log(allItems[i].getName());
+            Debug.Log(allItems[i].getName() + " | count: " + allItems[i].getAmount());
         }
     }
 }

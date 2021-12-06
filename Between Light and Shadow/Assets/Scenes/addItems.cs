@@ -68,7 +68,7 @@ public class addItems : MonoBehaviour
     //for the map
     public void getMap()
     {
-        Inventory.Instance.addItem("full water");
+        Inventory.Instance.addItem("Map");
         Debug.Log("item added");
         GameObject.Find("Map").GetComponent<UnityEngine.UI.Button>().interactable = false;
         Inventory.Instance.printInventory();
