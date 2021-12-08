@@ -25,7 +25,10 @@ public class SceneChange : MonoBehaviour
     }
     public void toLeftHouse()
     {
-        SceneManager.LoadScene("LeftHouse");
+        //must get rid of the boards before entering the house
+        if (GameObject.Find("boards").GetComponent<UnityEngine.UI.Button>().interactable == false) {
+            SceneManager.LoadScene("LeftHouse");
+        }
     }
     public void toRightHouse()
     {

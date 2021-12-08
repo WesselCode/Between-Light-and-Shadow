@@ -166,5 +166,11 @@ public class addItems : MonoBehaviour
             GameObject.Find("Sink").GetComponent<UnityEngine.UI.Button>().interactable = false;
         }
     }
-
+    //use the crowbar on board to clear them:
+   public void useCrowboard()
+    {
+        if (Inventory.Instance.use.getName() == "crowbar") {
+            GameObject.Find("boards").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        }
+    }
 }
