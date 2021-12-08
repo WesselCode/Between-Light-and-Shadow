@@ -18,10 +18,6 @@ public class SceneChange : MonoBehaviour
         if (Inventory.Instance.use.getName() == "bolt cutters") {
             SceneManager.LoadScene("Cellar");
         }
-        else
-        {
-            //do nothing for now, need to make text pop up saying you need bolt cutters for chains
-        }
     }
     public void toCenterHouse()
     {
@@ -39,10 +35,6 @@ public class SceneChange : MonoBehaviour
     {
         if (Inventory.Instance.use.getName() == "shed key") {
             SceneManager.LoadScene("RightShed");
-        }
-        else
-        {
-            //do nothing for now, would need to make a text pop saying you need a key
         }
     }
     public void toRightRoad()
