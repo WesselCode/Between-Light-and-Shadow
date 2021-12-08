@@ -29,4 +29,32 @@ public class GlobalControl : MonoBehaviour
 
     //an inventory to save to and use
     public List<Item> items = new List<Item>() { new Item("crowbar"), new Item("pocket knife") };
+
+    //the boolean values to make sure buttons stay off/on if used or not:
+    //fill buttonState: all buttons are already known, auto them all "on" which is 1:
+    public Dictionary<string, int> buttonState = new Dictionary<string, int>() {
+        { "Water", 1 }, {"EmptyBottle", 1 }, {"Can", 1 },
+        { "Can2", 1}, {"TableCloth", 1}, {"CoatRack", 1},
+        { "ClothingLine", 1}, {"Map", 1 }, {"Product", 1},
+        { "BoltCutters", 1}, {"ShedKey", 1},
+    };
+
+    public bool checkActive(string keyName)
+    {
+        if (buttonState[keyName] == 1)
+        {
+            return true;//button stays active
+        }
+        else
+        {
+            //button is not active
+            return false;
+        }
+    }
+
+    public void deactive(string keyName)
+    {
+        buttonState[keyName] = 0;
+        //button is no longer active, will fail checks
+    }
 }

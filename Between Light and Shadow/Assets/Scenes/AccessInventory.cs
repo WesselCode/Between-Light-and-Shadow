@@ -17,7 +17,7 @@ public class AccessInventory : MonoBehaviour
 
         //make a string of options from the inventory:
         string[] items = new string[Inventory.Instance.getCount()];
-        Debug.Log(Inventory.Instance.getCount());
+        //Debug.Log(Inventory.Instance.getCount());
         for (int i = 0; i < Inventory.Instance.getCount(); i++)
         {
             items[i] = Inventory.Instance.printItem(i);

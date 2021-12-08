@@ -70,6 +70,18 @@ public class Inventory : MonoBehaviour
             allItems[index].addOne();
         }
     }
+    //delete item from inventory if amount goes to zero
+    public void loseItem(string theItem)
+    {
+        //fist get index and then check amounts, loseOne is called, then check if amount is 0
+        int index = findItem(theItem);
+        allItems[index].loseOne();
+        if (allItems[index].getAmount() <= 0)
+        {
+            allItems.RemoveAt(index);
+        }
+    }
+
     //get the number of unique items in the inventory
     public int getCount()
     {
