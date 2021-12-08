@@ -36,7 +36,9 @@ public class GlobalControl : MonoBehaviour
         { "Water", 1 }, {"EmptyBottle", 1 }, {"Can", 1 },
         { "Can2", 1}, {"TableCloth", 1}, {"CoatRack", 1},
         { "ClothingLine", 1}, {"Map", 1 }, {"Product", 1},
-        { "BoltCutters", 1}, {"ShedKey", 1},
+        { "BoltCutters", 1}, {"ShedKey", 1}, { "WaterA", 1 },
+        { "WaterB", 1 }, { "WaterC", 1 }, {"CanA", 1 },
+        {"CanB", 1 }, { "Can2A", 1}, {"ProductA", 1}
     };
 
     public bool checkActive(string keyName)

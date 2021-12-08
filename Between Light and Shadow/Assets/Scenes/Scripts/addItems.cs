@@ -19,8 +19,33 @@ public class addItems : MonoBehaviour
             //Debug.Log("item added");
             //Inventory.Instance.printInventory();
             GameObject.Find("Water").GetComponent<UnityEngine.UI.Button>().interactable = false;
-            GlobalControl.Instance.deactive("Water");
+           // GlobalControl.Instance.deactive("Water");
+        }/*
+        //only d othis if still active, one use button so deactivate before leaving:
+        if (GlobalControl.Instance.checkActive("WaterA"))
+        {
+            Inventory.Instance.addItem("full water");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+            GameObject.Find("WaterA").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("WaterA");
         }
+        if (GlobalControl.Instance.checkActive("WaterB"))
+        {
+            Inventory.Instance.addItem("full water");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+            GameObject.Find("WaterB").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("WaterB");
+        }
+        if (GlobalControl.Instance.checkActive("WaterC"))
+        {
+            Inventory.Instance.addItem("full water");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+            GameObject.Find("WaterC").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("WaterC");
+        }*/
     }
     //for empty bottle
     public void getEmptyBottle()
@@ -45,8 +70,26 @@ public class addItems : MonoBehaviour
             //Debug.Log("item added");
             //Inventory.Instance.printInventory();
             GameObject.Find("Can").GetComponent<UnityEngine.UI.Button>().interactable = false;
-            GlobalControl.Instance.deactive("Can");
+           // GlobalControl.Instance.deactive("Can");
         }
+        /*
+        if (GlobalControl.Instance.checkActive("CanA"))
+        {
+            Inventory.Instance.addItem("food can");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+            GameObject.Find("CanA").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("CanA");
+        }
+        if (GlobalControl.Instance.checkActive("CanB"))
+        {
+            Inventory.Instance.addItem("food can");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+          //  GameObject.Find("CanB").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("CanB");
+        }
+        */
     }
     //in case of second can
     public void getCan2()
@@ -58,8 +101,17 @@ public class addItems : MonoBehaviour
             //Debug.Log("item added");
             //Inventory.Instance.printInventory();
             GameObject.Find("Can2").GetComponent<UnityEngine.UI.Button>().interactable = false;
-            GlobalControl.Instance.deactive("Can2");
+           // GlobalControl.Instance.deactive("Can2");
         }
+        //only do this if still active, one use button so deactivate before leaving:
+       /* if (GlobalControl.Instance.checkActive("Can2A"))
+        {
+            Inventory.Instance.addItem("food can");
+            //Debug.Log("item added");
+            //Inventory.Instance.printInventory();
+            GameObject.Find("Can2A").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GlobalControl.Instance.deactive("Can2A");
+        }*/
     }
     //for table cloth, disable
     public void getTableCloth()
@@ -123,8 +175,16 @@ public class addItems : MonoBehaviour
             //Debug.Log("item added");
             GameObject.Find("Product").GetComponent<UnityEngine.UI.Button>().interactable = false;
             //Inventory.Instance.printInventory();
-            GlobalControl.Instance.deactive("Product");
-        }
+            //GlobalControl.Instance.deactive("Product");
+        }/*
+        if (GlobalControl.Instance.checkActive("ProductA"))
+        {
+            Inventory.Instance.addItem("misc");
+            //Debug.Log("item added");
+            GameObject.Find("ProductA").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            //Inventory.Instance.printInventory();
+            GlobalControl.Instance.deactive("ProductA");
+        }*/
     }
 
     //for bolt cutters
@@ -149,7 +209,7 @@ public class addItems : MonoBehaviour
         {
             Inventory.Instance.addItem("shed key");
             //Debug.Log("item added");
-            GameObject.Find("ShedKey").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            GameObject.Find("drawerWithKey").GetComponent<UnityEngine.UI.Button>().interactable = false;
             //Inventory.Instance.printInventory();
             GlobalControl.Instance.deactive("ShedKey");
         }
